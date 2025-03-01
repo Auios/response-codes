@@ -1,6 +1,6 @@
 {
   "name": "@auios/response-codes",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A reusable package for HTTP response code definitions",
   "keywords": [
     "http",
@@ -17,7 +17,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "publish": "npm publish --access public",
+    "release": "npm publish --access public",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {

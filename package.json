@@ -1,6 +1,6 @@
 {
   "name": "@auios/response-codes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A reusable package for HTTP response code definitions",
   "keywords": [
     "http",
@@ -9,6 +9,10 @@
     "typescript"
   ],
   "author": "Connor O'Connor",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -16,10 +20,6 @@
     "publish": "npm publish --access public",
     "prepublishOnly": "npm run build"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "MIT",
   "devDependencies": {
     "typescript": "^5.7.3"
   }

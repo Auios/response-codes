@@ -1,6 +1,6 @@
 {
   "name": "@auios/response-codes",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A reusable package for HTTP response code definitions",
   "keywords": [
     "http",

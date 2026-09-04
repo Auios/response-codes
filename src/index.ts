@@ -1,4 +1,4 @@
-const ResponseCode = {
+const ResponseCode = Object.freeze({
   // 1xx Informational
   /**
    * The server has received the request headers, and the client should proceed to send the request body.
@@ -442,6 +442,24 @@ const ResponseCode = {
    * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/511
    */
   NetworkAuthenticationRequired_511: 511,
-} as const;
+} as const);
 
+export type ResponseCodeKey = keyof typeof ResponseCode;
+export type ResponseCodeValue = (typeof ResponseCode)[ResponseCodeKey];
+
+export const ResponseCodeName = Object.freeze(
+  Object.fromEntries(
+    (Object.keys(ResponseCode) as ResponseCodeKey[]).map((key) => [
+      ResponseCode[key],
+      key,
+    ]),
+  ) as {
+    readonly [V in ResponseCodeValue]: Extract<
+      ResponseCodeKey,
+      `${string}_${V}`
+    >;
+  },
+);
+
+export { ResponseCode };
 export default ResponseCode;

@@ -1,7 +1,7 @@
 {
   "name": "@auios/response-codes",
-  "version": "1.0.14",
-  "description": "A reusable package for HTTP response code definitions",
+  "version": "1.2.0",
+  "description": "Typed HTTP status codes with editor autocomplete",
   "keywords": [
     "http",
     "response",
@@ -10,24 +10,47 @@
   ],
   "author": "Connor O'Connor",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Auios/response-codes.git"
+  },
+  "homepage": "https://github.com/Auios/response-codes#readme",
+  "bugs": {
+    "url": "https://github.com/Auios/response-codes/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "update": "npx npm-check-updates -u",
-    "clean": "rimraf dist",
+    "clean": "node -e \"import('node:fs').then(fs => fs.rmSync('dist',{recursive:true,force:true}))\"",
     "prebuild": "npm run clean",
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "release": "npm publish --access public",
-    "test": "node --import tsx --test __tests__/**/*.test.ts"
+    "test": "node --import tsx --test __tests__/**/*.test.ts",
+    "format": "prettier --write ."
   },
   "devDependencies": {
-    "npm-check-updates": "^18.0.1",
-    "rimraf": "^6.0.1",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+    "npm-check-updates": "^23.1.0",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
   }
 }

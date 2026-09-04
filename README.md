@@ -1,6 +1,6 @@
 # ResponseCode
 
-Typed HTTP status codes with editor autocomplete. Node.js 20 or later. ESM-only.
+Typed HTTP status codes aligned 1:1 with [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status). Node.js 20 or later. ESM-only.
 
 ## Installation
 

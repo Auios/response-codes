@@ -143,10 +143,11 @@ const ResponseCode = Object.freeze({
   UseProxy_305: 305,
 
   /**
-   * No longer used. Originally meant "Subsequent requests should use the specified proxy."
-   * @description Deprecated status code, no longer in use.
+   * This response code is no longer used; but is reserved.
+   * @description It was used in a previous version of the HTTP/1.1 specification.
+   * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/306
    */
-  SwitchProxy_306: 306,
+  Unused_306: 306,
 
   /**
    * The request should be repeated with another URI, but future requests can still use the original URI.
@@ -254,11 +255,11 @@ const ResponseCode = Object.freeze({
   PreconditionFailed_412: 412,
 
   /**
-   * The request is larger than the server is willing or able to process.
-   * @description The request entity is larger than limits defined by server.
+   * The request body is larger than limits defined by server.
+   * @description The server might close the connection or return a Retry-After header field.
    * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413
    */
-  PayloadTooLarge_413: 413,
+  ContentTooLarge_413: 413,
 
   /**
    * The URI provided was too long for the server to process.
@@ -304,10 +305,10 @@ const ResponseCode = Object.freeze({
 
   /**
    * The request was well-formed but was unable to be followed due to semantic errors.
-   * @description The request was well-formed but unable to be processed due to semantic errors.
+   * @description The request was well-formed but unable to be followed due to semantic errors.
    * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422
    */
-  UnprocessableEntity_422: 422,
+  UnprocessableContent_422: 422,
 
   /**
    * The resource that is being accessed is locked.

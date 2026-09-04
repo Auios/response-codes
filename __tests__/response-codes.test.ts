@@ -10,8 +10,11 @@ describe('ResponseCode', () => {
     equal(ResponseCode.Continue_100, 100);
     equal(ResponseCode.OK_200, 200);
     equal(ResponseCode.Created_201, 201);
+    equal(ResponseCode.Unused_306, 306);
     equal(ResponseCode.NotFound_404, 404);
+    equal(ResponseCode.ContentTooLarge_413, 413);
     equal(ResponseCode.ImATeapot_418, 418);
+    equal(ResponseCode.UnprocessableContent_422, 422);
     equal(ResponseCode.InternalServerError_500, 500);
     equal(ResponseCode.NetworkAuthenticationRequired_511, 511);
   });
@@ -28,7 +31,10 @@ describe('ResponseCode', () => {
 describe('ResponseCodeName', () => {
   it('maps status numbers to key names', () => {
     equal(ResponseCodeName[200], 'OK_200');
+    equal(ResponseCodeName[306], 'Unused_306');
     equal(ResponseCodeName[404], 'NotFound_404');
+    equal(ResponseCodeName[413], 'ContentTooLarge_413');
+    equal(ResponseCodeName[422], 'UnprocessableContent_422');
     equal(ResponseCodeName[500], 'InternalServerError_500');
   });
 
